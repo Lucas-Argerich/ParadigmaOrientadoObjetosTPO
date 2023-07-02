@@ -4,34 +4,34 @@ public class Producto {
   private int codigo;
   private String descripcion;
   private double precioUnitario;
-  private int stockActual;
-  private int stockMinimo;
+  private Stock stock;
   
-  public Producto(int codigo, String descripcion, double precioUnitario, int stockActual, int stockMinimo) {
+  public Producto(int codigo) {
     this.codigo = codigo;
-    this.descripcion = descripcion;
-    this.precioUnitario = precioUnitario;
-    this.stockActual = stockActual;
-    this.stockMinimo = stockMinimo;
+    this.stock = new Stock();
   }
   
   public int getCodigo() {
     return codigo;
   }
   
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
+  }
+
   public String getDescripcion() {
     return descripcion;
+  }
+
+  public void setPrecioUnitario(double precioUnitario) {
+    this.precioUnitario = precioUnitario;
   }
   
   public double getPrecioUnitario() {
     return precioUnitario;
   }
 
-  public int getStockActual() {
-    return stockActual;
-  }
-
-  public int getStockMinimo() {
-    return stockMinimo;
+  public Stock getStock() {
+    return stock;
   }
 }
