@@ -1,4 +1,4 @@
-package TPO.negocio.ventas;
+package tpo.negocio.ventas;
 
 public class MedioPago {
   private String metodoDePago;

@@ -1,4 +1,4 @@
-package TPO.negocio.productos;
+package tpo.negocio.productos;
 
 import java.util.ArrayList;
 

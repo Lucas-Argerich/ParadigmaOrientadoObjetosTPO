@@ -1,6 +1,6 @@
-package TPO.negocio.ventas;
+package tpo.negocio.ventas;
 
-import TPO.negocio.productos.Producto;
+import tpo.negocio.productos.Producto;
 
 public class Detalle {
   private int codigo;

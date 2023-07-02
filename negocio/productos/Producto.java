@@ -1,4 +1,4 @@
-package TPO.negocio.productos;
+package tpo.negocio.productos;
 
 public class Producto {
   private int codigo;
