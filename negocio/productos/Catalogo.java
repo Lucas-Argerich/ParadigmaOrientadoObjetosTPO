@@ -19,7 +19,8 @@ public class Catalogo {
 
   public void listado() {
     for(Producto producto : productos) {
-      System.out.println(producto.getCodigo() + 
+      System.out.println(
+      "ID: " + producto.getCodigo() + 
       ", " + producto.getDescripcion() +
       ", $" + producto.getPrecioUnitario() + "/u" +
       ", Stock: " + producto.getStock().getStockActual());
