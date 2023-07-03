@@ -8,7 +8,11 @@ public class Stock {
     stockActual = 0;
     stockMinimo = 0;
   }
-
+  
+  private void alertarStock() {
+    System.out.println("ALERTA!: El Stock retirado a caido bajo su minimo de " + stockMinimo + "!");
+  }
+  
   private boolean hayStockSuficiente(int num) {
     if(stockActual < num) {
       return false;
@@ -19,20 +23,16 @@ public class Stock {
     return true;
   }
 
-  private void alertarStock() {
-    System.out.println("ALERTA!: El Stock retirado a caido bajo su minimo de " + stockMinimo);
-  }
-
   public void agregarStock(int num) {
     stockActual += num;
   }
 
-  public void bajarStock(int num) {
+  public boolean bajarStock(int num) {
     if(!hayStockSuficiente(num)) {
-      System.out.println("No hay Stock suficiente");
-      return;
+      return false;
     }
     stockActual -= num;
+    return true;
   }
 
   public int getStockActual() {

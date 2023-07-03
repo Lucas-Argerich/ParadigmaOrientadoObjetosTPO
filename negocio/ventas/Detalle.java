@@ -3,24 +3,26 @@ package tpo.negocio.ventas;
 import tpo.negocio.productos.Producto;
 
 public class Detalle {
-  private int codigo;
   private Producto producto;
   private int cantidad;
   private double subtotal;
 
-  public Detalle(int codigo, Producto producto, int cantidad, int subtotal) {
-    this.codigo = codigo;
+  public Detalle(Producto producto) {
     this.producto = producto;
-    this.cantidad = cantidad;
-    this.subtotal = producto.getPrecioUnitario() * cantidad;
+    actualizarSubtotal();
   }
 
-  public int getCodigo() {
-    return codigo;
+  private void actualizarSubtotal() {
+    subtotal = producto.getPrecioUnitario() * cantidad;
   }
 
   public Producto getProducto() {
     return producto;
+  }
+  
+  public void setCantidad(int cantidad) {
+    this.cantidad = cantidad;
+    actualizarSubtotal();
   }
 
   public int getCantidad() {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Catalogo {
   private ArrayList<Producto> productos;
-  
+
   public Catalogo() {
     productos = new ArrayList<Producto>();
   }
@@ -18,12 +18,16 @@ public class Catalogo {
   }
 
   public void listado() {
-    for(Producto producto : productos) {
+    for (Producto producto : productos) {
+
       System.out.println(
-      "ID: " + producto.getCodigo() + 
-      ", " + producto.getDescripcion() +
-      ", $" + producto.getPrecioUnitario() + "/u" +
-      ", Stock: " + producto.getStock().getStockActual());
+          String.format("ID:%d  %12s  $%6s/u  Stock:%d", 
+            producto.getCodigo(),
+            producto.getDescripcion(),
+            producto.getPrecioUnitario(),
+            producto.getStock().getStockActual()
+          )
+        );
     }
   }
 }
