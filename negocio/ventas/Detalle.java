@@ -5,7 +5,7 @@ import tpo.negocio.productos.Producto;
 public class Detalle {
   private Producto producto;
   private int cantidad;
-  private double subtotal;
+  private float subtotal;
 
   public Detalle(Producto producto) {
     this.producto = producto;
@@ -29,7 +29,7 @@ public class Detalle {
     return cantidad;
   }
 
-  public double getSubtotal() {
+  public float getSubtotal() {
     return subtotal;
   }
 }

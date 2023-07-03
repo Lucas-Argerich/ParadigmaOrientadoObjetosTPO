@@ -4,16 +4,16 @@ import java.util.HashMap;
 
 public class Credito implements IMetodoDePago {
   private String metodo;
-  private double multiplicador;
-  private HashMap<Integer, Double> cuotasAdmitidas;
+  private float multiplicador;
+  private HashMap<Integer, Float> cuotasAdmitidas;
   private int cuotas;
 
   public Credito() {
     metodo = "Credito";
-    cuotasAdmitidas = new HashMap<Integer, Double>();
-    cuotasAdmitidas.put(2, 1.06);
-    cuotasAdmitidas.put(3, 1.12);
-    cuotasAdmitidas.put(6, 1.2);
+    cuotasAdmitidas = new HashMap<Integer, Float>();
+    cuotasAdmitidas.put(2, 1.06f);
+    cuotasAdmitidas.put(3, 1.12f);
+    cuotasAdmitidas.put(6, 1.2f);
   }
 
   public void setCuotas(int cuotas) {
@@ -34,7 +34,7 @@ public class Credito implements IMetodoDePago {
   }
 
   @Override
-  public double getMultiplicador() {
+  public float getMultiplicador() {
     return multiplicador;    
   }
 }

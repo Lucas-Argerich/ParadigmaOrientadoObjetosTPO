@@ -13,7 +13,7 @@ public class Pago {
     return metodoDePago;
   }
 
-  public double calcularPrecioFinal(double subtotal) {
+  public float calcularPrecioFinal(float subtotal) {
     return subtotal * metodoDePago.getMultiplicador();
   }
 }

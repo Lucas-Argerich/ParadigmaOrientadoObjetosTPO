@@ -3,7 +3,7 @@ package tpo.negocio.productos;
 public class Producto {
   private int codigo;
   private String descripcion;
-  private double precioUnitario;
+  private float precioUnitario;
   private Stock stock;
   
   public Producto(int codigo) {
@@ -23,11 +23,11 @@ public class Producto {
     return descripcion;
   }
 
-  public void setPrecioUnitario(double precioUnitario) {
+  public void setPrecioUnitario(float precioUnitario) {
     this.precioUnitario = precioUnitario;
   }
   
-  public double getPrecioUnitario() {
+  public float getPrecioUnitario() {
     return precioUnitario;
   }
 

@@ -2,11 +2,11 @@ package tpo.negocio.ventas.metodosDePago;
 
 public class Debito implements IMetodoDePago {
   private String metodo;
-  private double multiplicador;
+  private float multiplicador;
 
   public Debito() {
     metodo = "Debito";
-    multiplicador = 1.0;
+    multiplicador = 1.0f;
   }
 
   @Override
@@ -15,7 +15,7 @@ public class Debito implements IMetodoDePago {
   }
 
   @Override
-  public double getMultiplicador() {
+  public float getMultiplicador() {
     return multiplicador;
   }
 }

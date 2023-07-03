@@ -6,6 +6,7 @@ import tpo.negocio.ventas.Detalle;
 import tpo.negocio.productos.Catalogo;
 import tpo.negocio.productos.Producto;
 import tpo.negocio.ventas.Venta;
+import tpo.negocio.ventas.metodosDePago.Credito;
 
 public class Run {
   static Random rand = new Random();
@@ -84,15 +85,20 @@ public class Run {
     p10.getStock().setStockMinimo(6);
     catalogo.cargarProducto(p10);
 
+    catalogo.listado();
 
     Venta venta = new Venta();
-    
+    Credito credito = new Credito();
+    credito.setCuotas(3);
+    venta.getPago().setMetodoDePago(credito);
+
     Detalle d1 = new Detalle(p2);
     d1.setCantidad(30);
     venta.cargarDetalle(d1);
-    venta.bajarDetalle(d1);
     
-    catalogo.listado();
+    System.out.println("Subtotal: " + venta.getSubtotal());
+    System.out.println("Precio Final: " + venta.getPrecioFinal());
+
   }
 
   private static int generateCodigo() {

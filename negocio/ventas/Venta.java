@@ -5,20 +5,21 @@ import java.util.ArrayList;
 public class Venta {
   ArrayList<Detalle> detalles;
   Pago pago;
-  double subtotal;
-  double precioFinal;
+  float subtotal;
+  float precioFinal;
 
   public Venta() {
     detalles = new ArrayList<Detalle>();
     pago = new Pago();
   }
 
-  private void actualizarSubtotal() {
+  private void actualizarPrecios() {
     int suma = 0;
     for (Detalle detalle : detalles) {
       suma += detalle.getSubtotal();
     }
     subtotal = suma;
+    precioFinal = pago.calcularPrecioFinal(subtotal);
   }
 
   public void cargarDetalle(Detalle detalle) {
@@ -33,21 +34,22 @@ public class Venta {
       return;
     }
     detalles.add(detalle);
-    actualizarSubtotal();
+    actualizarPrecios();
+
   }
 
   public void bajarDetalle(Detalle detalle) {
     int cantidad = detalle.getCantidad();
     detalle.getProducto().getStock().agregarStock(cantidad);
     detalles.remove(detalle);
-    actualizarSubtotal();
+    actualizarPrecios();
   }
 
-  public double getSubtotal() {
+  public float getSubtotal() {
     return subtotal;
   }
 
-  public double getPrecioFinal() {
+  public float getPrecioFinal() {
     return precioFinal;
   }
 

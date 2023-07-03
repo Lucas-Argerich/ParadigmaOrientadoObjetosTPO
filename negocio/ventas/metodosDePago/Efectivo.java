@@ -2,11 +2,11 @@ package tpo.negocio.ventas.metodosDePago;
 
 public class Efectivo implements IMetodoDePago {
   private String metodo;
-  private double multiplicador;
+  private float multiplicador;
 
   public Efectivo() {
     metodo = "Efectivo";
-    multiplicador = 0.9;
+    multiplicador = 0.9f;
   }
 
   @Override
@@ -15,7 +15,7 @@ public class Efectivo implements IMetodoDePago {
   }
 
   @Override
-  public double getMultiplicador() {
+  public float getMultiplicador() {
     return multiplicador;
   }
 }
