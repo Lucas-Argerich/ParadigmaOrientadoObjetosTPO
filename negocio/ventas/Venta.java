@@ -26,16 +26,12 @@ public class Venta {
     int cantidad = detalle.getCantidad();
     boolean res = detalle.getProducto().getStock().bajarStock(cantidad);
     if (!res) {
-      System.out.println(
-          "No hay stock suficiente. No se agrega '" +
-              detalle.getCantidad() + " " +
-              detalle.getProducto().getDescripcion() +
-              "' a la Venta.");
+      System.out.println("No hay stock suficiente. No se agrega '" + detalle.getCantidad() + " "
+          + detalle.getProducto().getDescripcion() + "' a la Venta.");
       return;
     }
     detalles.add(detalle);
     actualizarPrecios();
-
   }
 
   public void bajarDetalle(Detalle detalle) {

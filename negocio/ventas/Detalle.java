@@ -19,7 +19,7 @@ public class Detalle {
   public Producto getProducto() {
     return producto;
   }
-  
+
   public void setCantidad(int cantidad) {
     this.cantidad = cantidad;
     actualizarSubtotal();

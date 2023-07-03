@@ -17,17 +17,23 @@ public class Catalogo {
     productos.remove(producto);
   }
 
+  public Producto getProducto(int codigo) {
+    for (Producto producto : productos) {
+      if (producto.getCodigo() == codigo)
+        return producto;
+    }
+    return null;
+  }
+
   public void listado() {
     for (Producto producto : productos) {
 
       System.out.println(
-          String.format("ID:%d  %12s  $%6s/u  Stock:%d", 
-            producto.getCodigo(),
-            producto.getDescripcion(),
-            producto.getPrecioUnitario(),
-            producto.getStock().getStockActual()
-          )
-        );
+          String.format("ID:%d  %12s  $%6s/u  Stock:%d",
+              producto.getCodigo(),
+              producto.getDescripcion(),
+              producto.getPrecioUnitario(),
+              producto.getStock().getStockActual()));
     }
   }
 }

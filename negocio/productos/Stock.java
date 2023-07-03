@@ -10,16 +10,17 @@ public class Stock {
     stockMinimo = 0;
     this.producto = producto;
   }
-  
+
   private void alertarStock() {
-    System.out.println("ALERTA!: El Stock retirado de '" + producto.getDescripcion() + "' a caido bajo su minimo de " + stockMinimo + "!");
+    System.out.println("ALERTA!: El Stock retirado de '" + producto.getDescripcion() + "' a caido bajo su minimo de "
+        + stockMinimo + "!");
   }
-  
+
   private boolean hayStockSuficiente(int num) {
-    if(stockActual < num) {
+    if (stockActual < num) {
       return false;
     }
-    if(stockActual - num < stockMinimo) {
+    if (stockActual - num < stockMinimo) {
       alertarStock();
     }
     return true;
@@ -30,7 +31,7 @@ public class Stock {
   }
 
   public boolean bajarStock(int num) {
-    if(!hayStockSuficiente(num)) {
+    if (!hayStockSuficiente(num)) {
       return false;
     }
     stockActual -= num;

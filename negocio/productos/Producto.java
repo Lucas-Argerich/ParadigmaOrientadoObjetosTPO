@@ -5,12 +5,12 @@ public class Producto {
   private String descripcion;
   private float precioUnitario;
   private Stock stock;
-  
+
   public Producto(int codigo) {
     this.codigo = codigo;
     this.stock = new Stock(this);
   }
-  
+
   public int getCodigo() {
     return codigo;
   }
@@ -26,7 +26,7 @@ public class Producto {
   public void setPrecioUnitario(float precioUnitario) {
     this.precioUnitario = precioUnitario;
   }
-  
+
   public float getPrecioUnitario() {
     return precioUnitario;
   }
