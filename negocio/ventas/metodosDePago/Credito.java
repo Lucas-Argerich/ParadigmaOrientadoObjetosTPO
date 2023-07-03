@@ -18,8 +18,7 @@ public class Credito implements IMetodoDePago {
 
   public void setCuotas(int cuotas) {
     if(!cuotasAdmitidas.containsKey(cuotas)) {
-      System.out.println("Numero de Cuotas no admitido.");
-      return;
+      throw new Error("ERROR: Numero de Cuotas no admitido.");
     }
     this.cuotas = cuotas;
     multiplicador = cuotasAdmitidas.get(cuotas);

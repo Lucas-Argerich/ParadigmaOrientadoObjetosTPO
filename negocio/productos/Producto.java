@@ -8,13 +8,13 @@ public class Producto {
   
   public Producto(int codigo) {
     this.codigo = codigo;
-    this.stock = new Stock();
+    this.stock = new Stock(this);
   }
   
   public int getCodigo() {
     return codigo;
   }
-  
+
   public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
   }

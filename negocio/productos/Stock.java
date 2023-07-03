@@ -3,14 +3,16 @@ package tpo.negocio.productos;
 public class Stock {
   private int stockActual;
   private int stockMinimo;
+  private Producto producto;
 
-  public Stock() {
+  public Stock(Producto producto) {
     stockActual = 0;
     stockMinimo = 0;
+    this.producto = producto;
   }
   
   private void alertarStock() {
-    System.out.println("ALERTA!: El Stock retirado a caido bajo su minimo de " + stockMinimo + "!");
+    System.out.println("ALERTA!: El Stock retirado de '" + producto.getDescripcion() + "' a caido bajo su minimo de " + stockMinimo + "!");
   }
   
   private boolean hayStockSuficiente(int num) {
